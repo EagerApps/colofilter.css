@@ -1,0 +1,126 @@
+{
+  "resources": {
+    "head": [
+      {
+        "type": "style",
+        "src": "./styles/colofilter.css"
+      },
+      {
+        "type": "script",
+        "src": "./install/helper.js"
+      }
+    ]
+  },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["*"],
+        "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "regions": {
+        "title": "Images to filter",
+        "order": 1,
+        "type": "array",
+        "items": {
+          "notitle": true,
+          "type": "object",
+          "properties": {
+            "location": {
+              "order": 1,
+              "title": "Location",
+              "description": "Select the part of your page which contains the image you’d like to filter.",
+              "type": "string",
+              "format": "selector"
+            },
+            "color": {
+              "order": 2,
+              "title": "Color",
+              "type": "string",
+              "enum": [
+                "blue",
+                "orange",
+                "red",
+                "green",
+                "yellow",
+                "purple",
+                "pink",
+                "blue-yellow",
+                "pink-yellow",
+                "red-blue"
+              ],
+              "enumNames": {
+                "blue": "Blue",
+                "orange": "Orange",
+                "red": "Red",
+                "green": "Green",
+                "yellow": "Yellow",
+                "purple": "Purple",
+                "pink": "Pink",
+                "blue-yellow": "Blue Yellow",
+                "pink-yellow": "Pink Yellow",
+                "red-blue": "Red Blue"
+              },
+              "default": "red-blue"
+            },
+            "brightness": {
+              "order": 3,
+              "title": "Brightness",
+              "type": "string",
+              "enum": [
+                "light",
+                "normal",
+                "dark"
+              ],
+              "enumNames": {
+                "light": "Light",
+                "normal": "Normal",
+                "dark": "Dark"
+              },
+              "default": "normal"
+            },
+            "text": {
+              "order": 4,
+              "title": "Text to place over image",
+              "type": "string",
+              "default": "FIRE"
+            },
+            "textSize": {
+              "order": 5,
+              "title": "Text size",
+              "type": "string",
+              "enum": [
+                "2em",
+                "4em",
+                "6em",
+                "8em",
+                "10em"
+              ],
+              "enumNames": {
+                "2em": "Small",
+                "4em": "Medium",
+                "6em": "Large",
+                "8em": "Extra Large",
+                "10em": "Huge",
+                "14em": "Giant"
+              },
+              "default": "8em"
+            }
+          }
+        },
+        "default": [
+          {
+            "location": "body",
+            "color": "red-blue",
+            "brightness": "normal",
+            "text": "FIRE",
+            "textSize": "6em"
+          }
+        ]
+      }
+    }
+  }
+}
