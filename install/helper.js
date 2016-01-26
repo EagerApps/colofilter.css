@@ -24,7 +24,7 @@
         continue;
 
       for (var j=0; j < imgs.length; j++){
-        if (!imgs[i].parentNode.classList.contains('eager-colofilter-figure')){
+        if (!imgs[j].parentNode.classList.contains('eager-colofilter-figure')){
           var figure = document.createElement('figure');
           figure.className = 'eager-colofilter-figure';
 
@@ -40,7 +40,7 @@
           imgs[j].parentNode.replaceChild(figure, imgs[j]);
           figure.appendChild(imgs[j]);
         } else {
-          var figure = imgs[i].parentNode;
+          var figure = imgs[j].parentNode;
         }
 
         var text = figure.querySelector('.eager-colofilter-text');
